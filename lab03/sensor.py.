@@ -21,6 +21,6 @@ mean = total/valid
 print(records)
 print(errors)
 print(exceeded)
-print(peak)
-print(mean)
+print(f'{peak:.1f}')
+print(f'{mean:.1f}')
 
