@@ -1,0 +1,9 @@
+limit = float(input())
+records = int(input())
+errors = 0
+for _ in range(records):
+  reading = input()
+  if reading == 'error':
+    errors+=1
+print(records)
+print(errors)
