@@ -15,3 +15,22 @@ def read_rows(lines : list[str]) -> list[dict]:
             row[header[i].strip()] = values[i].strip()
         l.append(row)
     return l
+def count_types(rows : list[dict]) -> dict:
+    d = {}
+    for row in rows:
+        if row['тип'] in d:
+             d[row['тип']] += 1
+        else:
+            d[row['тип']] = 1
+    return d
+def total_minutes(rows : list[dict], kind : str) -> float:
+    time = 0.0
+    for row in rows:
+        if row['тип'] == kind:
+            try:
+                time += float(row['минуты'].replace(',', '.'))
+            except ValueError:
+                continue
+    return round(time,1)
+    
+    return round(time, 1)
