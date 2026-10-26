@@ -11,3 +11,15 @@ def average(scores):
   for n in scores:
     summ+=n
   return round(summ/len(scores),2)
+def ranking(names,scores):
+  indices = sorted(range(len(scores)), key = lambda i: scores[i], reverse=True)
+  return [names[i] for i in indices]
+def above_average(names,scores):
+  nm = []
+  avr = average(scores)
+  for i in range(len(scores)):
+    if scores[i]>avr:
+      nm.append(names[i])
+  return nm
+if __name__ == "__main__":
+  print(winner(['tom', 'jery'], [1,5]))
