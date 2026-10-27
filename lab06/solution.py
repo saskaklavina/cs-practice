@@ -24,4 +24,4 @@ def only_in_first(first, second):
     for value in first:
         if value not in second:
             d.add(value)
-    return list(d)
+    return sorted(list(d))
